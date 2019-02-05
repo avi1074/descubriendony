@@ -1,0 +1,17 @@
+.categories
+  .show
+    .container
+      - @category.activities.each_with_index do |activity, index|
+        %a.activity-item-container{href: "/activities/#{@category.id}/#{activity.permalink}"}
+          .avatar-container
+            .avatar{style: "background-image: url(#{activity.activity_image_url(:medium).to_s})"}
+          .details-container
+            .title
+              = activity.main_title
+            .description
+              = truncate_html(activity.description, :ommision => "... Read More", :length => 400)
+              %br
+              %br
+              .btn.btn-primary{href: "/activities/#{@category.id}/#{activity.permalink}"}= t("activities.index.learn-more")
+
+              

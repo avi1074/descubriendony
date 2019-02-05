@@ -1,0 +1,44 @@
+%h1 New Category
+= form_for(@category, :html => {:multipart => true}) do |f|
+  - if params[:type] == "children"
+    %br
+    Category
+    = select("category", "category_id",  options_from_collection_for_select(@categories, "id", "name", if @category.category.nil? then "" else  @category.category.id end), {})
+  %br
+  Name in English
+  = text_field_tag :english_name, @category.name_translations["en"]
+  %br
+  Name in Spanish
+  = text_field_tag :spanish_name, @category.name_translations["es"]
+  %br
+  Name in Portuguese
+  = text_field_tag :portuguese_name, @category.name_translations["pt"]
+  %br
+  City
+  =radio_button("category", "city", "miami")
+  Miami
+  =radio_button("category", "city", "newyorkcity")
+  NYC
+  =radio_button("category", "city", "losangeles")
+  Los Angeles
+
+  %br
+  position
+  = f.text_field :position
+  - if params[:type] == "children"
+    %br
+    = image_tag @category.category_image_url(:medium).to_s
+    = f.file_field :category_image
+  %br
+  = text_field_tag :type, params[:type], style: "display:none"
+  - if params[:type] == "children"
+
+    %h2 Activities
+    #related.tab-pane
+      Related Activities
+      = select_tag( "related_activities_selector",  options_from_collection_for_select(@activities, "id", "main_title", @related_activities), {:multiple => true})
+
+
+  %br
+  = f.submit "Update", :class => "btn btn-primary"
+

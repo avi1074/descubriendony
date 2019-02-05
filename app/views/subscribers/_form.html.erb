@@ -1,0 +1,8 @@
+<%= form_for(Subscriber.new) do |f| %>
+  
+  <div class="field" style="padding-top: 15px;">
+     <%= f.text_field :email, :style => "color: black; width: 150px", :placeholder => "Enter your email id" %> 
+     <%= f.submit "Subscribe", :class => "btn btn-primary" %>
+  </div>
+  
+<% end %>

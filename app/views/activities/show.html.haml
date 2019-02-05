@@ -1,0 +1,113 @@
+.activities
+  .show
+    .top-banner-container
+      - if !@activity.banner_horizontal.nil? and @activity.banner_horizontal != ""
+        %a{href: @activity.banner_url, target: "_blank"}
+          %img{src: @activity.bannerhorizontalchange}
+      - if !@activity.bannerhorizontalchange.nil? and @activity.bannerhorizontalchange != ""
+        %a{href: @activity.bannerurlchange, target: "_blank"}
+          %img{src: @activity.bannerhorizontalchange}
+    .container
+      / F1F1F1
+      %h1.main_title
+        = @activity.main_title
+      .row
+        .col-md-6.col-md-push-6.left-side
+          - if @activity.video.nil? or @activity.video == ""
+            .main-image-container
+              .main-image{style: "background-image: url(#{@activity.activity_image_url(:large).to_s})"}
+          - else
+            .video-container
+              %iframe{:frameborder => "0", :height => "315", :src => "#{@activity.video}", :width => "560"}
+          / Menu button
+          - if !@activity.menu_url.nil? and @activity.menu_url != ""
+            .referal-buttons-container
+              %a.btn.btn-danger{href: @activity.menu_url, target: "_blank"}= t("activities.show.view-menu")
+          / Buy Now Button
+          - if !@activity.buy_now_url.nil? and @activity.buy_now_url != ""
+            .referal-buttons-container
+              %a.btn.btn-danger{href: @activity.buy_now_url, target: "_blank"}= t("activities.show.buy-now")
+          /buy change button
+          - if !@activity.buynowurlchange.nil? and @activity.buynowurlchange != ""
+            .referal-buttons-container
+              %a.btn.btn-danger{href: @activity.buynowurlchange, target: "_blank"}= t("activities.show.buy-now")
+          - if @related_activities_same_category.count > 0
+            .related-activities-container
+              .main-title
+                = t("activities.show.related-videos")
+              .related-activities
+                - @related_activities_same_category.each do |activity|
+                  .item
+                    %a.avatar-container{href: "/activities/#{@parent_category.id.to_s}/#{activity.permalink}"}
+                      .avatar{style: "background-image: url(#{activity.activity_image_url(:small).to_s})"}
+                        .title
+                          = activity.main_title
+          / - if @activity.related_activities.count > 0
+          /   .related-activities-container
+          /     .main-title
+          /       = t("activities.show.near-places")
+          /     .related-activities
+          /       - @activity.related_activities.each do |activity|
+          /         .item
+          /           %a.avatar-container{href: "/activities/#{activity.principal_category.to_s}/#{activity.permalink}"}
+          /             .avatar{style: "background-image: url(#{activity.activity_image_url(:small).to_s})"}
+          /               .title
+          /                 = activity.
+          - if @related_activities_by_group.count > 0
+            .related-activities-container
+              .main-title
+                Cercanos
+              .related-activities
+                - @related_activities_by_group.each do |group, activities|
+                  .title
+                    = group.name rescue "Miscelaneos"
+                  - activities.each do |activity|
+                    .item
+                      %a.avatar-container{href: "/activities/#{group.id rescue '0'}/#{activity.permalink}"}
+                        .avatar{style: "background-image: url(#{activity.activity_image_url(:small).to_s})"}
+                          .title
+                            = activity.main_title
+        .col-md-6.col-md-pull-6.right-side
+          %section.location-container
+            .how-to-get-there
+              %span#map
+                %a{:href => @activity.google_maps, :target => "_blank"}
+                  [
+                  = t("activities.show.view-map")
+                  ]
+                  %br/
+                  / span>Gratis</span
+              %a{:href => @activity.url, :target => "_blank"}
+                = @activity.url
+              %br
+
+              /%font{:color => "#FF0000"}
+              /  = "#{t("activities.show.price")}: #{if @activity.is_free? then 'Free' elsif @activity.price.nil? or @activity.price == 0 then 'Free' else @activity.price end}"
+              / %br
+              /%font{:color => "#036"}
+              %h5{style: "color: #036; font-weight: bold;"}
+                = @activity.pricechange
+                %br
+              = @activity.address
+              %br
+              = @activity.phone_number
+              .transportation-container
+                %ul
+                  - @activity.transportations.each do |transportation|
+                    %li
+                      .transportation-lines-container
+                        - transportation.lines.each do |line|
+                          .transportation-line{style: "background-color: ##{line.color}", class: @city_id}
+                            = line.short_name
+                      .transportation-lines-name
+                        = transportation.name
+                %br
+          %section.script-container
+            %h4= @activity.title
+            .script-text
+              = @activity.description.html_safe
+          %section.sharing-buttons-container
+            .addthis_sharing_toolbox
+          %section.comments-container
+            %h3= t("activities.show.comments")
+            .fb-comments{"data-href"=>"#{request.protocol}#{request.host}#{request.fullpath}", "data-numposts"=>"5", "data-colorscheme"=>"light", "data-width" => "100%"}

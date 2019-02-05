@@ -1,0 +1,175 @@
+.container
+  .edit
+    / Nav tabs
+    %ul.nav.nav-tabs{:role => "tablist"}
+      %li.active
+        %a{"data-toggle" => "tab", :href => "#main-tab", :role => "tab"} General
+      %li
+        %a{"data-toggle" => "tab", :href => "#espanol-tab", :role => "tab"} Espanol
+      %li
+        %a{"data-toggle" => "tab", :href => "#ingles-tab", :role => "tab"} Ingles
+      %li
+        %a{"data-toggle" => "tab", :href => "#portugues-tab", :role => "tab"} Portugues
+      %li
+        %a{"data-toggle" => "tab", :href => "#transportation-tab", :role => "tab"} Transportation
+      %li
+        %a{"data-toggle" => "tab", :href => "#related", :role => "tab"} Related
+    / Tab panes
+    = form_for(@activity, :html => {:multipart => true}) do |f|
+      .tab-content
+        #main-tab.tab-pane.active
+          = image_tag @activity.activity_image_url(:small).to_s
+          = f.file_field :activity_image
+          %table.table
+            %tr
+              %td Main title
+              %td= f.text_field :main_title
+            %tr
+            %tr
+              %td Position
+              %td= f.text_field :position
+            %tr
+            %tr
+              %td URL
+              %td= f.text_field :url
+            %tr
+              %td Address
+              %td
+                = f.text_field :address, :placeholder => "Address"
+                = f.text_field :address2, :placeholder => "Address 2"
+            %tr
+
+
+            %tr
+              %td City
+              %td
+                =radio_button("activity", "city", "miami")
+                Miami
+                =radio_button("activity", "city", "newyorkcity")
+                NYC
+                =radio_button("activity", "city", "losangeles")
+                Los Angeles
+            %tr
+
+
+              %td Phone Number
+              %td= f.text_field :phone_number, :placeholder => "Phone Number"
+            %tr
+              %td Google Maps
+              %td= f.text_area :google_maps, :placeholder => "Google Maps"
+            %tr
+              %td Coordinates
+              %td= text_field_tag :coordinates, @activity.coordinates.join(',')
+            %tr
+              %td Menu url
+              %td= f.text_field :menu_url, :placeholder => "Menu url"
+
+        #espanol-tab.tab-pane
+          %table.table
+            %tr
+              %td Video in Spanish
+              %td= text_field_tag :spanish_video, @activity.video_translations["es"]
+            %tr
+              %td Spanish title
+              %td= text_field_tag :spanish_title, @activity.title_translations["es"]
+            %tr
+              %td Spanish description
+              %td= cktext_area_tag :spanish_description, @activity.description_translations["es"]
+            %tr
+              %td Spanish Price
+              %td= text_field_tag :spanish_change, @activity.pricechange_translations["es"]
+            %tr
+              %td Buy Button Spanish url
+              %td= text_field_tag :spanish_buynow, @activity.buynowurlchange_translations["es"], :placeholder => "Button Spanish url"
+            %tr
+              %td Banner Spanish url
+              %td= text_field_tag :spanish_bannerurl, @activity.bannerurlchange_translations["es"], :placeholder => "Banner url"
+            %tr
+              %td Banner Spanish Imagen URL
+              %td= text_field_tag :spanish_bannerhorizontal, @activity.bannerhorizontalchange_translations["es"], :placeholder => "Banner image url"
+          Title in Spanish - SEO
+          = text_field_tag :spanish_meta_title, @activity.meta_title_translations["es"]
+          %br
+          Keywords in Spanish - SEO
+          = text_field_tag :spanish_meta_keywords, @activity.meta_keywords_translations["es"]
+          %br
+          Description in Spanish - SEO
+          = text_field_tag :spanish_meta_description, @activity.meta_description_translations["es"]
+          %br
+        #ingles-tab.tab-pane
+          %table.table
+            %tr
+              %td Video in English
+              %td= text_field_tag :english_video, @activity.video_translations["en"]
+            %tr
+              %td English title
+              %td= text_field_tag :english_title, @activity.title_translations["en"]
+            %tr
+              %td English description
+              %td= cktext_area_tag :english_description, @activity.description_translations["en"]
+            %tr
+              %td English Price
+              %td= text_field_tag :english_change, @activity.pricechange_translations["en"]
+            %tr
+              %td Banner English url
+              %td= text_field_tag :english_bannerurl, @activity.bannerurlchange_translations["en"], :placeholder => "Banner url"
+            %tr
+              %td Banner English horizontal
+              %td= text_field_tag :english_bannerhorizontal, @activity.bannerhorizontalchange_translations["en"], :placeholder => "Banner image url"
+            %tr
+              %td Buy English  url
+              %td= text_field_tag :english_buynow, @activity.buynowurlchange_translations["en"], :placeholder => "Button English url"
+          Title in English SEO
+          = text_field_tag :english_meta_title, @activity.meta_title_translations["en"]
+          %br
+          Keywords in English SEO
+          = text_field_tag :english_meta_keywords, @activity.meta_keywords_translations["en"]
+          %br
+          Description in English SEO
+          = text_field_tag :english_meta_description, @activity.meta_description_translations["en"]
+          %br
+
+        #portugues-tab.tab-pane
+          %table.table
+            %tr
+              %td Video in Portuguese
+              %td= text_field_tag :portuguese_video, @activity.video_translations["pt"]
+            %tr
+              %td Portuguese title
+              %td= text_field_tag :portuguese_title, @activity.title_translations["pt"]
+            %tr
+              %td Portuguese description
+              %td= cktext_area_tag :portuguese_description, @activity.description_translations["pt"]
+            %tr
+              %td Portuguese Price
+              %td= text_field_tag :portuguese_change, @activity.pricechange_translations["pt"]
+            %tr
+              %td Banner Portuguese url
+              %td= text_field_tag :portuguese_bannerurl, @activity.bannerurlchange_translations["pt"], :placeholder => "Banner url"
+            %tr
+              %td Banner Portuguese horizontal
+              %td= text_field_tag :portuguese_bannerhorizontal, @activity.bannerhorizontalchange_translations["pt"], :placeholder => "Banner image url"
+            %tr
+              %td Buy Portuguese  url
+              %td= text_field_tag :portuguese_buynow, @activity.buynowurlchange_translations["pt"], :placeholder => "Button Portuguese url"
+          Title in Portuguese - SEO
+          = text_field_tag :portuguese_meta_title, @activity.meta_title_translations["pt"]
+          %br
+          Keywords in Portuguese - SEO
+          = text_field_tag :portuguese_meta_keywords, @activity.meta_keywords_translations["pt"]
+          %br
+          Description in Portuguese - SEO
+          = text_field_tag :portuguese_meta_description, @activity.meta_description_translations["pt"]
+
+        #transportation-tab.tab-pane
+          .transportation-container
+            %ul
+              - Transportation.where(city: @city).each do |transportation|
+                %li
+                  = check_box_tag "[transportation_ids][]", transportation.id, @activity.transportations.include?(transportation)
+                  = transportation.name
+        #related.tab-pane
+          Related Activities
+          / %select#
+          = select_tag( "related_activities_selector",  options_from_collection_for_select(@activities, "id", "main_title", @activity.related_activities.map {|j| j._id}), {:multiple => true})
+        = f.submit "Update", :class => "btn btn-primary"

@@ -1,0 +1,62 @@
+pt:
+  seo:
+    description-newyorkcity: "informação de que fazer, onde ir, compra, shows de broadway, atrações, onde comer na cidade de Nova York"
+    keywords-newyorkcity: "Nova York, NYC, compras, broadway, central park, empire state, atrações, descontos, taxi"
+    description-miami: "informação de que fazer, onde ir, compra, praias , atrações, onde comer e danzar na cidade de Miami"
+    keywords-miami: "Miami, compras, sales, outlets, descontos, atrações, sol, praias, descobrindo miami"
+    description-losangeles: ""
+    keywords-losangeles: ""
+  general:
+    search: "Pesquisar"
+  social-networks:
+    google-newyorkcity: "https://plus.google.com/104946878021887125516"
+    facebook-newyorkcity: "https://www.facebook.com/DescobrindoNovaYork/"
+    twitter-newyorkcity: "https://twitter.com/DescobrindoNY"
+    youtube-newyorkcity: "https://www.youtube.com/channel/UCwYQNDSDn6Lh2B7f9RiFguw"
+    instagram-newyorkcity: "http://instagram.com/descubriendony"
+    pinterest-newyorkcity: "http://www.pinterest.com/descubriendony/"
+    google-miami: "https://plus.google.com/u/0/118175058616082832427/posts"
+    facebook-miami: "https://www.facebook.com/Descubriendo-Miami-521520378032517/?fref=ts"
+    twitter-miami: "https://twitter.com/descubriendomia"
+    youtube-miami: "https://www.youtube.com/channel/UCS7-ZewIP8Kh1nfBHFpDLuQ"
+    instagram-miami: "https://www.instagram.com/descubriendomia/"
+    pinterest-miami: "http://www.pinterest.com/descubriendony/"
+    google-losangeles: "https://www.google.com"
+    facebook-losangeles: "https://www.facebook.com"
+    twitter-losangeles: "https://twitter.com"
+    youtube-losangeles: "https://www.youtube.com"
+    instagram-losangeles: "https://www.instagram.com"
+    pinterest-losangeles: "http://www.pinterest.com/descubriendony/"
+  landing:
+    main-title: "Convidamos você a descobrir Nova York....."
+    sub-title: "Este é o lugar onde pode encontrar a informação que você precisa para se transportar à grande maçã, atividades grátis ou a um módico preço permitindo a todos desfrutar da cidade que nunca dorme."
+    main-title-miami: "Miami é ótimo!, Descobrir ..."
+    sub-title-miami: "Convidamos você a descobrir Miami..... Este é o lugar onde pode encontrar a informação que você precisa desfrutar da cidade do Sol."
+    main-title-losangeles: "Los Angeles é ótimo!, Descobrir ..."
+    sub-title-losangeles: "Em breve"
+  activities:
+    show:
+      view-map: "Ver o mapa"
+      price: "Preço"
+      comments: "Comentários"
+      view-menu: "Vista Menu"
+      buy-now: "Comprar Agora"
+      related-videos: "Vídeos relacionados"
+      near-places: "Lugares próximos"
+    index:
+      learn-more: "Saber mais"
+  footer:
+    about:
+      about-title: "Sobre"
+      about-us: "Sobre nós"
+      blog: "Blog"
+      blog-link-newyorkcity: "http://digitalmarket.website/blog_dnovayork"
+      blog-link-miami: "http://digitalmarket.website/dmiami_blog/ "
+      blog-link-losangeles: "http://www.digitalmarket.website"
+    help:
+      help-title: "Ajuda"
+      faqs: "Perguntas frequentes"
+      contact-us: "Entre em contato"
+    connect:
+      connect-title: "Conecte"
+      suscribe-text: "Subscrever"

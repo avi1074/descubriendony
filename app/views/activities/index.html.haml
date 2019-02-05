@@ -1,0 +1,48 @@
+.landing-top-image-container{style: "background-image: url(/assets/backgrounds/landing-#{@city_id}-#{rand(1..5)}.jpg);"}
+  .logo-container
+    %img{src: "/assets/logo-#{@city_id}.png"}
+  .text-container
+    - if @city_id == "newyorkcity"
+      .main-text
+        = t("landing.main-title")
+      .subtitle
+        = t("landing.sub-title")
+
+    - elsif @city_id == "miami"
+      .main-text
+        = t("landing.main-title-miami")
+      .subtitle
+        = t("landing.sub-title-miami")
+    - elsif @city_id == "losangeles"
+      .main-text
+        = t("landing.main-title-losangeles")
+      .subtitle
+        = t("landing.sub-title-losangeles")
+
+  .arrow-down-container
+    .arrow-down-child
+      %img{src: "/assets/arrow-down.png"}
+.activities
+  .container
+    .index
+      .search-form-container
+        = form_tag("/activities/search", method: "get") do
+          .input-group
+            = text_field_tag :searchterm, nil, :placeholder => t("general.search"), :class => "form-control"
+            %span.input-group-btn
+              = submit_tag "Go!", :class => "btn btn-default"
+              / %button.btn.btn-default Go!
+
+      - @categories.each do |category|
+        %h2= category.name
+        .sub-categories{id: "slider-#{category.id}"}
+          .sub-category-container.slider
+            - category.categories.order_by("position ASC").each_with_index do |sub_category, index|
+              %a.sub-category-item.slide{style: "background-image: url(#{sub_category.category_image_url(:medium).to_s})", href: "/categories/#{sub_category.permalink}"}
+                .title
+                  = sub_category.name
+          - if category.categories.count > 3
+            %a.next-slide-container.previous-slide{href: "javascript:", data: {direction: "prevPage", "slider-id" => category.id}}
+              %img{src: "/assets/icons/arrow.png"}
+            %a.next-slide-container.next-slide{href: "javascript:", data: {direction: "nextSlide", "slider-id" => category.id}}
+              %img{src: "/assets/icons/arrow.png"}

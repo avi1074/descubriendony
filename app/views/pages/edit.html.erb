@@ -1,0 +1,46 @@
+<h1>Editing page</h1>
+
+<%= form_for @page do |f| %>
+  <% if @page.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@page.errors.count, "error") %> prohibited this page from being saved:</h2>
+
+      <ul>
+      <% @page.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :page %>
+    <%= f.text_field :page, :disabled => true %>
+
+    <%= f.label :city %>
+    <%= f.text_field :city, :disabled => true %>
+  </div>
+ 
+  
+  <div class="field">
+    <%= f.label :content_English %><br>
+    <%= cktext_area_tag :english_content, @page.content_translations["en"] %>
+  </div>
+  <div class="field">
+    <%= f.label :content_Español %><br>
+    <%= cktext_area_tag :spanish_content, @page.content_translations["es"] %>
+  </div>
+  <div class="field">
+    <%= f.label :content_Português %><br>
+    <%= cktext_area_tag :portuguese_content, @page.content_translations["pt"] %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+
+
+
+<%= link_to 'Back', admin_pages_path() %>

@@ -1,0 +1,46 @@
+.categories {
+  .show {
+    .activity-item-container {
+      .avatar-container {
+        display: inline-block;
+        margin-top: 15px;
+        .avatar {
+          width: 450px;
+          height: 285px;
+          background-color: #CCC;
+          vertical-align: top;
+          margin-right: 5px;
+          position: relative;
+          background-size: cover;
+        }
+      }
+      .details-container {
+        display: inline-block;
+        vertical-align: top;
+        width: 55%;
+        margin-top: 10px;
+        // background-color: #colorCC;
+        .title {
+          width: 100%;
+          // color: #;
+          // padding: 5px 5px 5px 7px;
+          font-size: 30px;
+          color: #333;
+        }
+        .description {
+          font-size: 16px;
+          color: #333;
+          display:initial;
+        }
+      }
+    }
+  }
+  .admin {
+    .sub-category-name {
+      display: inline-block;
+    }
+    .sub-category-options-container {
+      display: inline-block;
+    }
+  }
+}

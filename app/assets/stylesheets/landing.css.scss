@@ -1,0 +1,50 @@
+.landing-top-image-container {
+  width: 100%;
+  height: 700px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-align: center;
+  .logo-container {
+    padding-top: 100px;
+    img {
+      width: 120px;
+    }
+  }
+  .text-container {
+    background: rgba(0,0,0,0.5);
+    width: 60%;
+    margin: 20px auto;
+    padding: 15px 15px 5px 15px;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+    .main-text {
+      font-size: 60px;
+      font-family: 'Kaushan Script', cursive;
+      color: #FFF;
+      line-height: 60px;
+    }
+    .subtitle {
+      font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+      color: #FFF;
+      font-weight: 300;
+      margin-top: 20px;
+      font-size: 2.1rem;
+      line-height: 3.5rem;
+      margin: 20px auto;
+    }
+  }
+  .arrow-down-container {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    .arrow-down-child {
+      position: relative;
+      left: -50%;
+      img {
+        width: 100px;
+      }
+    }
+  }
+}

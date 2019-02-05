@@ -1,0 +1,56 @@
+
+.container
+
+  %p
+  %img{:alt => "", :src => "http://nuevayork.space/banners/accelerate/banner.jpg", :style => "height:100%; width:100%"}/
+  %table{:style => "width:100%"}
+  %tbody
+  %tr
+  %td{:style => "width:50%"}
+  %p Buscas informaci&oacute;n sobre Nueva York, que hacer durante tu viaje, actividades, donde comer, los mejores sitios para visitar en un poco tiempo, actividades gratis o a bajo precio.
+  
+
+  / Begin MailChimp Signup Form
+  %link{:href => "//cdn-images.mailchimp.com/embedcode/classic-10_7.css", :rel => "stylesheet", :type => "text/css"}
+    :css
+      #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif;  width:500px;}
+      /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+         We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+    #mc_embed_signup{:style => "max-width: 100%;float: left;"}
+      %form#mc-embedded-subscribe-form.validate{:action => "//descubriendonewyork.us13.list-manage.com/subscribe/post?u=133a2faa99b48a081d343abaf&amp;id=cbccd04d2e", :method => "post", :name => "mc-embedded-subscribe-form", :novalidate => "", :target => "_blank"}
+        #mc_embed_signup_scroll
+          %h2 Deseo más información sobre Nueva york
+          .indicates-required
+            %span.asterisk *
+            indicates required
+          .mc-field-group
+            %label{:for => "mce-LNAME"} Nombre
+            %input#mce-LNAME{:name => "LNAME", :type => "text", :value => ""}
+          .mc-field-group
+            %label{:for => "mce-EMAIL"}
+              Email Address
+              %span.asterisk *
+            %input#mce-EMAIL.required.email{:name => "EMAIL", :type => "email", :value => ""}
+          .mc-field-group
+            %label{:for => "mce-FCIUDAD"} Ciudad / Pais
+            %input#mce-FCIUDAD{:name => "FCIUDAD", :type => "text", :value => ""}
+          .mc-field-group
+            %label{:for => "mce-INFOSABER"} Informacion que desea saber
+            %input#mce-INFOSABER{:name => "INFOSABER", :type => "text", :value => ""}
+          #mce-responses.clear
+            #mce-error-response.response{:style => "display:none"}
+            #mce-success-response.response{:style => "display:none"}
+          / real people should not fill this in and expect good things - do not remove this or risk form bot signups
+          %div{"aria-hidden" => "true", :style => "position: absolute; left: -5000px;"}
+            %input{:name => "b_133a2faa99b48a081d343abaf_cbccd04d2e", :tabindex => "-1", :type => "text", :value => ""}/
+          .clear
+            %input#mc-embedded-subscribe.button{:name => "subscribe", :type => "submit", :value => "Subscribe"}/
+    %script{:src => "//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js", :type => "text/javascript"}
+    :javascript
+      (function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[2]='LNAME';ftypes[2]='text';fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FCIUDAD';ftypes[1]='text';fnames[5]='INFOSABER';ftypes[5]='text';}(jQuery));var $mcj = jQuery.noConflict(true);  
+      / End mc_embed_signup
+ 
+    %iframe{:frameborder => "0", :height => "315", :src => "https://www.youtube.com/embed/l3vcsHpVvs0", :style => "max-width: 100%; margin-top: 30px;", :width => "620"}
+    %p Descubriendo New York te ayudara a organizae tu viaje, suscribete a nuestro newletter y te estamos enviando informaci&oacute;n sobre New York, o dejanos saber que necesitas y te ayudamos a planear tu propio viaje sin costo alguno            
+   
+   

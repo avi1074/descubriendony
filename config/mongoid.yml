@@ -1,0 +1,44 @@
+development:
+  # Configure available database clients. (required)
+  clients:
+    # Defines the default client. (required)
+    default:
+      # Defines the name of the default database that Mongoid can connect to.
+      # (required).
+      database: descubriendony_development
+      # Provides the hosts the default client can connect to. Must be an array
+      # of host:port pairs. (required)
+      hosts:
+        - localhost:27017
+#test:
+#  clients:
+ #   default:
+ #     database: descubriendony_test
+ #     hosts:
+ #       - localhost:27017
+ #     options:
+ #       read:
+ #         mode: primary
+ #       max_pool_size: 1
+
+#production:   
+ # clients:
+  #  default:
+   #   database: heroku_app30782945
+    #  username: descubriendony
+     # password: Caf4jig3wE
+      #hosts:
+       # - <%= ENV['MONGOHQ_URL'] %>
+  #options:
+   # raise_not_found_error: false
+    #production
+    # Tell Mongoid which environment this configuration is for.
+production: 
+  clients: 
+    default: 
+      database: heroku_app30782945
+      hosts:
+        - ds047050.mongolab.com:47050
+      options:
+        user: "descubriendony"
+        password: "Caf4jig3wE"

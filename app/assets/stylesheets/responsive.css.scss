@@ -1,0 +1,392 @@
+@media(max-width:767px){
+  .landing-top-image-container {
+    .logo-container {
+      padding-top: 80px !important;
+    }
+    .text-container {
+      width: 95%;
+      background: rgba(0,0,0,0.3);
+      .main-text {
+        font-size: 50px;
+        line-height: 50px;
+      }
+      .subtitle {
+        font-size: 20px;
+        line-height: 3rem;
+      }
+    }
+    .arrow-down-container {
+      display: none;
+    }
+  }
+  .activities {
+    .index {
+      .sub-categories {
+        .next-slide-container {
+          display: none;
+        }
+      }
+    }
+    .show {
+      .top-banner-container {
+        img {
+          width: 320px;
+        }
+      }
+    }
+  }
+  //
+  .categories {
+    .show {
+      .activity-item-container {
+        .avatar-container {
+          display: inline-block;
+          margin-top: 0px;
+          .avatar {
+            width: 290px;
+            height: 184px;
+            background-size: cover;
+            background-repeat: no-repeat;
+          }
+        }
+        .details-container {
+          display: inline-block;
+          position: relative;
+          width: 100%;
+          .title {
+            position: absolute;
+            bottom: 14px;
+            background: rgba(0,0,0,0.6);
+            width: 100%;
+            color: #FFF;
+            padding: 5px 5px 5px 7px;
+            font-size: 18px;
+          }
+          .description {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .activities {
+    .index {
+      .sub-categories {
+        position: relative;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        // width: 320px;
+        // width: 100%;
+        height: 150px;
+        .sub-category-container {
+          &.slider {
+            width: 100%;
+            height: 100%;
+            &.slide {
+              float: left;
+            }
+          }
+          .sub-category-item {
+            width: 230px;
+            height: 146px;
+            background-color: #CCC;
+            display: inline-block;
+            vertical-align: top;
+            margin-right: 5px;
+            position: relative;
+            background-size: cover;
+            
+            .title {
+              position: absolute;
+              bottom: 0;
+              background: rgba(0,0,0,0.6);
+              width: 100%;
+              color: #FFF;
+              padding: 5px 5px 5px 7px;
+              font-size: 18px;
+            }
+          }
+        }
+        .next-slide-container {
+          display: none;
+        }
+      }
+    }
+    .show {
+      .left-side {
+        .main-image-container {
+          .main-image {
+            height: 200px;
+            background-size: cover;
+          }
+        }
+      }
+    }
+  }
+  .landing-top-image-container {
+    .logo-container {
+      padding-top: 20px;
+    }
+    .subtitle {
+      line-height: 3rem;
+      margin-top: 15px;
+      font-size: 1.9rem;
+    }
+  }
+}
+
+@media(min-width:768px){
+  .activities {
+    .index {
+
+    }
+    .show {
+      .left-side {
+        .main-image-container {
+          .main-image {
+            height: 375px;
+            background-size: cover;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+// /* Smartphones (portrait and landscape) ----------- */
+// @media only screen 
+// and (min-device-width : 320px) 
+// and (max-device-width : 480px) {
+//   .landing-top-image-container {
+//     .logo-container {
+//       padding-top: 80px !important;
+//     }
+//     .text-container {
+//       width: 95%;
+//       background: rgba(0,0,0,0.3);
+//       .main-text {
+//         font-size: 50px;
+//         line-height: 50px;
+//       }
+//       .subtitle {
+//         font-size: 20px;
+//         line-height: 3rem;
+//       }
+//     }
+//     .arrow-down-container {
+//       display: none;
+//     }
+//   }
+//   .activities {
+//     .index {
+//       .sub-categories {
+//         .next-slide-container {
+//           display: none;
+//         }
+//       }
+//     }
+//     .show {
+//       .top-banner-container {
+//         img {
+//           width: 380px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// /* Smartphones (portrait) ----------- */
+// @media only screen 
+// and (max-width : 320px) {
+//   .categories {
+//     .show {
+//       .activity-item-container {
+//         .avatar-container {
+//           display: inline-block;
+//           margin-top: 0px;
+//           .avatar {
+//             width: 290px;
+//             height: 184px;
+//             background-size: cover;
+//             background-repeat: no-repeat;
+//           }
+//         }
+//         .details-container {
+//           display: inline-block;
+//           position: relative;
+//           width: 290px;
+//           .title {
+//             position: absolute;
+//             bottom: 14px;
+//             background: rgba(0,0,0,0.6);
+//             width: 100%;
+//             color: #FFF;
+//             padding: 5px 5px 5px 7px;
+//             font-size: 18px;
+//           }
+//           .description {
+//             display: none;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .activities {
+//     .index {
+//       .sub-categories {
+//         position: relative;
+//         top: 0;
+//         left: 0;
+//         overflow: hidden;
+//         width: 320px;
+//         height: 150px;
+//         .sub-category-container {
+//           &.slider {
+//             width: 100%;
+//             height: 100%;
+//             &.slide {
+//               float: left;
+//             }
+//           }
+//           .sub-category-item {
+//             width: 230px;
+//             height: 146px;
+//             background-color: #CCC;
+//             display: inline-block;
+//             vertical-align: top;
+//             margin-right: 5px;
+//             position: relative;
+//             background-size: cover;
+            
+//             .title {
+//               position: absolute;
+//               bottom: 0;
+//               background: rgba(0,0,0,0.6);
+//               width: 100%;
+//               color: #FFF;
+//               padding: 5px 5px 5px 7px;
+//               font-size: 18px;
+//             }
+//           }
+//         }
+//         .next-slide-container {
+//           display: none;
+//         }
+//       }
+//     }
+//     .show {
+//       .left-side {
+//         .main-image-container {
+//           .main-image {
+//             height: 200px;
+//             background-size: cover;
+//           }
+//         }
+//       }
+//     }
+//   }
+//   .landing-top-image-container {
+//     .logo-container {
+//       padding-top: 20px;
+//     }
+//     .subtitle {
+//       line-height: 3rem;
+//       margin-top: 15px;
+//       font-size: 1.9rem;
+//     }
+//   }
+// }
+
+// /* iPads (portrait and landscape) ----------- */
+// @media only screen 
+// and (min-device-width : 768px) 
+// and (max-device-width : 1024px) {
+//   .activities {
+//     .index {
+//       .sub-categories {
+//         .next-slide-container {
+//           display: none;
+//         }
+//       }
+//     }
+//   }
+// }
+
+// /* iPads (landscape) ----------- */
+// @media only screen 
+// and (min-device-width : 768px) 
+// and (max-device-width : 1024px) 
+// and (orientation : landscape) {
+//   .activities {
+//     .index {
+//       // .sub-categories {
+//       //   position: relative;
+//       //   top: 0;
+//       //   left: 0;
+//       //   overflow: hidden;
+//       //   width: 320px;
+//       //   height: 150px;
+//       //   .sub-category-container {
+//       //     &.slider {
+//       //       width: 100%;
+//       //       height: 100%;
+//       //       &.slide {
+//       //         float: left;
+//       //       }
+//       //     }
+//       //     .sub-category-item {
+//       //       width: 230px;
+//       //       height: 146px;
+//       //       background-color: #CCC;
+//       //       display: inline-block;
+//       //       vertical-align: top;
+//       //       margin-right: 5px;
+//       //       position: relative;
+//       //       background-size: cover;
+            
+//       //       .title {
+//       //         position: absolute;
+//       //         bottom: 0;
+//       //         background: rgba(0,0,0,0.6);
+//       //         width: 100%;
+//       //         color: #FFF;
+//       //         padding: 5px 5px 5px 7px;
+//       //         font-size: 18px;
+//       //       }
+//       //     }
+//       //   }
+//       // }
+//     }
+//     .show {
+//       .left-side {
+//         .main-image-container {
+//           .main-image {
+//             height: 275px;
+//             background-size: cover;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+
+// // /* iPads (portrait) ----------- */
+// @media only screen 
+// and (min-device-width : 768px) 
+// and (max-device-width : 1024px) 
+// and (orientation : portrait) {
+//   .activities {
+//     .show {
+//       .left-side {
+//         .main-image-container {
+//           .main-image {
+//             height: 440px;
+//             background-size: cover;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }

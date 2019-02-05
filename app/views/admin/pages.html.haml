@@ -1,0 +1,24 @@
+.pages
+  .admin
+    .container
+      %h1 Administrator
+      = select_tag "city", options_for_select([ ["Miami", "miami"], ["New York City","newyorkcity"], ["Los Angeles","losangeles"]], @city)
+      %br
+      %br
+      %ul.nav.nav-tabs
+        %li{:role => "presentation"}
+          %a{:href => "/admin/categories"} Categories
+        %li{:role => "presentation"}
+          %a{:href => "/admin/activities"} Activities
+        %li.active{:role => "presentation"}
+          %a{:href => "#"} pages
+        %li{:role => "presentation"}
+          %a{:href => "/admin/transportations"} Transportations
+      %br
+      %br
+      %ul
+
+        - @page.each do |page|
+          - if page.city == @city
+            %li= page.page
+            %a{href: "/admin/pages/#{page.id}/edit"} edit

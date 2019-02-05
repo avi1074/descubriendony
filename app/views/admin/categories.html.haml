@@ -1,0 +1,35 @@
+.categories
+  .admin
+    .container
+      %h1 Administrator
+      = select_tag "city", options_for_select([ ["Miami", "miami"], ["New York City","newyorkcity"], ["Los Angeles","losangeles"]], @city)
+      %br
+      %br
+      %ul.nav.nav-tabs
+        %li.active{:role => "presentation"}
+          %a{:href => "#"} Categories
+        %li{:role => "presentation"}
+          %a{:href => "/admin/activities"} Activities
+        %li{:role => "presentation"}
+          %a{:href => "/admin/pages"} Pages
+        %li{:role => "presentation"}
+          %a{:href => "/admin/transportations"} Transportations
+      %br
+      %a.btn.btn-primary{href: "/admin/categories/new"} New Category
+      %br
+      %br
+      %ul
+        - @categories.each do |category|
+          %li{data: {"category-id" => category.id}}
+            = category.name
+            %a{href: "/admin/categories/#{category.id}/edit"} edit
+            %a.delete-category{href: "javascript:", data: { "category-id" => category.id, "type" => "parent"} } delete
+            %a{href: "/admin/categories/new?type=children"} Add Subcategory
+          %ul
+            - category.categories.each do |sub_category|
+              %li{data: {"category-id" => sub_category.id}}
+                .sub-category-name{data: {"category-id" => sub_category.id}}
+                  = sub_category.name
+                .sub-category-options-container{data: {"category-id" => sub_category.id}}
+                  %a{href: "/admin/categories/#{sub_category.id}/edit?type=children"} edit
+                  %a.delete-category{href: "javascript:", data: { "category-id" => sub_category.id, "type" => "children"} } delete

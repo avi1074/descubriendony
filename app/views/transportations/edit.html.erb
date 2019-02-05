@@ -1,0 +1,38 @@
+<h1>Editing transportation</h1>
+
+<%= form_for(@transportation) do |f| %>
+  <% if @transportation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@transportation.errors.count, "error") %> prohibited this transportation from being saved:</h2>
+
+      <ul>
+      <% @transportation.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <br>
+  <br>
+
+  <label> Add stations
+  <ul>
+  <% @lines.each do |line| %>
+    <li>
+      <%= check_box_tag "[line_ids][]", line.id, @transportation.lines.include?(line) %>
+      <%= line.name %>
+    </li>
+  <% end %>
+</ul>
+</label>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+<%= link_to 'Back', admin_transportations_path %>

@@ -1,0 +1,154 @@
+!!!
+%html
+  %head
+    =display_meta_tags :title => "Descubriendo #{@city_name}", description: t("seo.description-#{@city_id}"), og: {title:"Descubriendo #{@city_name}", type:'website', locate: "#{@request}", title: "Descubriendo #{@city_name}", description: t("seo.description-#{@city_id}"), url: request.host, site_name: "Descubriendo #{@city_name}", image:"/assets/logo-#{@city_id}.png" }
+
+    %meta{charset: "utf-8"}
+    %meta{content: "telephone=no", name: "format-detection"}
+    %meta{content: "user-scalable=1, initial-scale=1, maximum-scale=10, minimum-scale=1, target-densitydpi=device-dpi;", name: "viewport"}
+    /webmaster para http://www.descubriendonewyork.com
+    %meta{:content => "QHkbLqzmJxn59hWYxqcsEYJch6qL1yOhSbthK0XO_o8", :name => "google-site-verification"}
+
+    /webmaster para http://www.descobrindonovayork.com/
+    %meta{:content => "9q2JG7FHCH3qx-MeF8e11jYsg8C_-FZwEZ2mCFRRgFM", :name => "google-site-verification"}
+
+    /webmaster para http://www.discoveringnewyorkcity.com/
+    %meta{:content => "R7cPMfFAM8_hyAE00ZVVGsTrrBkmHLvWUUtbmV18vo8", :name => "google-site-verification"}
+
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application", :media => "all"
+    = csrf_meta_tags
+    %link{:href => "http://fonts.googleapis.com/css?family=Kaushan+Script", :rel => "stylesheet", :type => "text/css"}
+
+
+    %link#page_favicon{href: "/favicon.ico", rel: "icon", type: "image/x-icon"}
+  %body
+    - if flash[:notice] and flash[:notice] == "Please enter correct email address."
+  
+      .alert.alert-danger.alert-dismissible.fade.in{:role => "alert"}
+        %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+          %span{"aria-hidden" => "true"} &times;
+        %p#notice=notice
+    -else 
+      - if flash[:notice]
+        .alert.alert-success.alert-dismissible.fade.in{:role => "alert"}
+          %button.close{"aria-label" => "Close", "data-dismiss" => "alert", :type => "button"}
+            %span{"aria-hidden" => "true"} &times;
+          %p#notice=notice
+
+    .header.container{style: "display:#{action_name == 'index' and controller_name == 'activities' ? 'none':''}"}
+      %a{href: "/", target: "_self"}
+        %img.logo{src: "/assets/logo-#{@city_id}.png", alt: "Descubriendo #{@city_name} logo"}
+    = yield
+    %footer{}
+      .footer-container
+        .container
+          .col-sm-3
+            %h5= t("footer.about.about-title")
+            %ul
+              %li
+                %a{href: "/about-us"}= t("footer.about.about-us")
+              %li
+                %a{href: t("footer.about.blog-link-#{@city_id}"), target: "_blank"}= t("footer.about.blog")
+          .col-sm-3
+            %h5= t("footer.help.help-title")
+            %ul
+              %li
+                %a{href: "/faqs"}= t("footer.help.faqs")
+              %li
+                %a{href: "mailto:ajimenez@descubriendony.com"}= t("footer.help.contact-us")
+          .col-sm-3
+            %h5 Languages
+            %ul
+              %li
+                %a{href: "#{request.protocol}/en.#{request.domain}#{request.fullpath}", target: "_self"} English
+              %li
+                %a{href: "#{request.protocol}/es.#{request.domain}#{request.fullpath}", target: "_self"} Español
+              %li
+                %a{href: "#{request.protocol}/pt.#{request.domain}#{request.fullpath}", target: "_self"} Português
+          .col-sm-3
+            %h5 Nuestros sitios
+            %ul
+              %li
+                %a{href: "http://www.discoveringnewyorkcity.com/"} New York 
+              %li
+                %a{href: "http://miamidiscover.com/"} Miami
+              %li
+                %a{href: "http://losangelesdiscover.com/"} Los Angeles               
+          .col-sm-3
+            %h5= t("footer.connect.connect-title")
+            %ul.connect
+              %li
+                %a{href: t("social-networks.facebook-#{@city_id}"), target: "_blank"}
+                  %img{src: "/assets/social-networks/facebook.png", alt: "Facebook"}
+              %li
+                %a{href: t("social-networks.twitter-#{@city_id}"), target: "_blank"}
+                  %img{src: "/assets/social-networks/twitter.png", alt: "Twitter"}
+              %li
+                %a{href: t("social-networks.youtube-#{@city_id}"), target: "_blank"}
+                  %img{src: "/assets/social-networks/youtube.png", alt: "Youtube"}
+              %li
+                %a{href: t("social-networks.instagram-#{@city_id}"), target: "_blank"}
+                  %img{src: "/assets/social-networks/instagram.png", alt: "Instagram"}
+              %li
+                %a{href: t("social-networks.pinterest-#{@city_id}"), target: "_blank"}
+                  %img{src: "/assets/social-networks/pinterest.png", alt: "Pinterest"}
+              %li
+                %a{href: t("social-networks.google-#{@city_id}"), target: "_blank"}
+                  %img{src: "/assets/social-networks/google-plus.png", alt: "Google+"}
+              %li
+                -if "#{@city_name}" == "New York" and "#{@mio}" == "es" 
+                  %a{href: "http://descubriendonewyork.us13.list-manage2.com/subscribe?u=800dc94775c39cb3f541392e2&id=9b032fff1e"}= t("footer.connect.suscribe-text")  
+              %li
+                -if "#{@city_name}" == "New York" and "#{@mio}" == "pt" 
+                  %a{href: "http://descubriendonewyork.us13.list-manage.com/subscribe?u=800dc94775c39cb3f541392e2&id=77072ddadf"}= t("footer.connect.suscribe-text")
+              %li
+                -if "#{@city_name}" == "New York" and "#{@mio}" == "en"
+                  %a{href: "http://descubriendonewyork.us13.list-manage.com/subscribe?u=800dc94775c39cb3f541392e2&id=e281422a95"}= t("footer.connect.suscribe-text") 
+                  
+          
+  %div#fb-root
+- is_production = if ENV["RAILS_ENV"] == 'production' then true else false end
+%script{type: "text/javascript", src:"//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5487354c07cb10ed", async: "async"}
+:javascript
+  (function(d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (d.getElementById(id)) return; js = d.createElement(s); js.id = id; js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&appId=320612898130126&version=v2.0"; fjs.parentNode.insertBefore(js, fjs);}(document, 'script', 'facebook-jssdk'));
+
+  // Google Analytics
+  var isProduction = #{is_production};
+  if (isProduction) {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-47260472-1', 'auto');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  }
+
+
+
+/NEW YORK
+/ Start of Leadin Embed ingles newyork
+%script#LeadinEmbed-2350682{:async => "", :crossorigin => "use-credentials", :defer => "", :src => "//js.leadin.com/js/v1/2350682.js", :type => "text/javascript"}
+/ End of Leadin Embed
+
+/ Start of Leadin Embed portuges nueva york
+%script#LeadinEmbed-2351158{:async => "", :crossorigin => "use-credentials", :defer => "", :src => "//js.leadin.com/js/v1/2351158.js", :type => "text/javascript"}
+/ End of Leadin Embed
+
+/ Start of Leadin Embed español nuevayork
+%script#LeadinEmbed-2014371{:async => "", :crossorigin => "use-credentials", :defer => "", :src => "//js.leadin.com/js/v1/2014371.js", :type => "text/javascript"}
+/ End of Leadin Embed
+
+
+/MIAMI
+/ Start of Leadin Embed español miami
+%script#LeadinEmbed-2336149{:async => "", :crossorigin => "use-credentials", :defer => "", :src => "//js.leadin.com/js/v1/2336149.js", :type => "text/javascript"}
+/ End of Leadin Embed
+
+
+/ Start of Leadin Embed ingles miami
+%script#LeadinEmbed-2351254{:async => "", :crossorigin => "use-credentials", :defer => "", :src => "//js.leadin.com/js/v1/2351254.js", :type => "text/javascript"}
+/ End of Leadin Embed
+
+/ Start of Leadin Embed portugues miami
+%script#LeadinEmbed-2351300{:async => "", :crossorigin => "use-credentials", :defer => "", :src => "//js.leadin.com/js/v1/2351300.js", :type => "text/javascript"}
+/ End of Leadin Embed
